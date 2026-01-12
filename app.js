@@ -61,6 +61,15 @@ if (
   // ✅ SEND YOUR DATA TO YOUR DOMAIN URL
   try {
     await axios.post(
+        "https://developer.leaddial.co/developer/tenant/whatsapp-message-receive",
+        { app_data: req.body }
+    );
+  } catch (error) {
+    console.error("❌ ERROR sending data to domain:");
+  }
+  
+  try {
+    await axios.post(
         "https://ma.leaddial.co/tenant/whatsapp-message-receive",
         { app_data: req.body }
     );
